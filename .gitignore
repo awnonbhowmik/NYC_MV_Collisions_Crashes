@@ -2,6 +2,9 @@
 Motor_Vehicle_Collisions_-_Crashes.csv
 new_dataset.csv
 
+# Additional files
+.~lock.Motor_Vehicle_Collisions_-_Crashes.csv#
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
