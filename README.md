@@ -26,10 +26,10 @@ The dataset includes various features, such as:
    - Use model insights to suggest preventive measures to enhance road safety in NYC.
 
 ## Notebook Summary
-Data Processing: Loaded data features such as year and population, scaled the features, and set target variables for prediction.
-Modeling: Built separate neural network models for predicting injuries and fatalities, using layers and activation functions suitable for regression.
-Evaluation: Evaluated model performance with loss metrics and RMSE.
-Visualization: Included loss curve plots for training and validation, along with prediction visualizations.
+- Data Processing: Loaded data features such as year and population, scaled the features, and set target variables for prediction.
+- Modeling: Built separate neural network models for predicting injuries and fatalities, using layers and activation functions suitable for regression.
+- Evaluation: Evaluated model performance with loss metrics and RMSE.
+- Visualization: Included loss curve plots for training and validation, along with prediction visualizations.
 
 ## Tools & Technologies
 
