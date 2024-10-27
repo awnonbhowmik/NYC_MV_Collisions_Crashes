@@ -2,6 +2,9 @@
 
 This repository contains data on motor vehicle collisions in New York City (sourced from [Data.gov](https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes).), focused on information such as crash dates, times, and details on injuries and fatalities among pedestrians, cyclists, and motorists. This project leverages Exploratory Data Analysis (EDA) to reveal patterns in collisions and applies predictive analytics to forecast high-risk periods and factors contributing to injuries and fatalities.
 
+## Project Overview
+This project involves using a Negative Binomial Model and LSTM neural network to predict counts of injuries and fatalities. It includes data preprocessing, model building, evaluation, and visualization.
+
 ## Dataset Overview
 
 The dataset includes various features, such as:
@@ -21,6 +24,12 @@ The dataset includes various features, such as:
    - Build machine learning models to predict the likelihood of injuries or fatalities based on time intervals and contributing factors.
    - Evaluate models using performance metrics such as accuracy, precision, and recall.
    - Use model insights to suggest preventive measures to enhance road safety in NYC.
+
+## Notebook Summary
+Data Processing: Loaded data features such as year and population, scaled the features, and set target variables for prediction.
+Modeling: Built separate neural network models for predicting injuries and fatalities, using layers and activation functions suitable for regression.
+Evaluation: Evaluated model performance with loss metrics and RMSE.
+Visualization: Included loss curve plots for training and validation, along with prediction visualizations.
 
 ## Tools & Technologies
 
