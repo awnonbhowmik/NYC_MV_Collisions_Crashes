@@ -39,7 +39,8 @@ subgroups and contributing-factor categories simultaneously.
 
 This paper makes three contributions:
 1. A comprehensive time-series audit of nine weekly crash-harm indicators spanning
-   Mar 2016–Mar 2026 — the longest such analysis in the NYC literature.
+   Mar 2016–Mar 2026, to our knowledge the most granular multi-series structural-break
+   analysis of the post-FORMS NYC collision record to date.
 2. A structural-break taxonomy distinguishing policy-coincident from data-detected
    breaks across road-user harm types and causal-factor shares.
 3. Evidence on the synchrony vs. divergence of structural change across pedestrian,
@@ -259,8 +260,8 @@ thereafter. Specifically:
 
 ## 6. Conclusion
 
-This study provides the first systematic multiple structural-break analysis of nine
-weekly crash-harm series in New York City over the post-FORMS period (2016–2026).
+This study presents a systematic multiple structural-break analysis of nine weekly
+crash-harm series in New York City over the post-FORMS period (2016–2026).
 We find evidence of 9 structural breaks across nine weekly series, of which 4 are
 "hidden" breaks not attributable to known policy events. The COVID-19 onset of March
 2020 emerges as the dominant structural event, producing synchronised breaks across
