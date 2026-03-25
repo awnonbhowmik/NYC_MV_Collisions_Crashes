@@ -1,0 +1,51 @@
+Variable,n / value,%
+SAMPLE,,
+  Total crashes (full record),"2,250,357",
+  Date range,Jul 2012 – Mar 2026,
+  Post-FORMS subsample (≥ Mar 2016),"1,488,231",66.1
+  Informative-factor crashes (post-2016),"933,314",62.7
+,,
+POLICY ERA (full record),,
+  Pre-VZ,"304,287",13.5
+  VZ-Early,"457,839",20.3
+  VZ-FORMS,"907,186",40.3
+  COVID,"128,146",5.7
+  Post-COVID,"452,899",20.1
+,,
+BOROUGH (post-imputation),,
+  Manhattan,"427,851",19.0
+  Brooklyn,"624,365",27.7
+  Queens,"578,248",25.7
+  Bronx,"306,719",13.6
+  Staten Island,"100,284",4.5
+  Missing,"212,890",9.5
+,,
+INJURY & FATALITY OUTCOMES,,
+  Total persons injured,"744,860",
+  Total persons killed,"3,585",
+  Mean persons injured per crash,0.331,
+  Crashes with any injury/fatality,"552,768",24.6
+  Pedestrian involved,"132,017",5.9
+  Cyclist involved,"65,423",2.9
+  Motorist-only injury,"345,992",15.4
+  Fatal crash,"3,437",0.2
+,,
+TEMPORAL CHARACTERISTICS,,
+  Weekend crashes,"576,268",25.6
+  Holiday crashes,"54,209",2.4
+  Winter,"535,778",23.8
+  Spring,"533,851",23.7
+  Summer,"585,960",26.0
+  Fall,"594,768",26.4
+  Mean hour of day (24h),13.2  (SD 5.8),
+,,
+CONTRIBUTING FACTOR — BROAD CATEGORY,,
+"(Post-Mar 2016, informative crashes only)",,
+  Distraction,"372,220",39.9
+  Yield Failure,"101,601",10.9
+  Speed,"74,715",8.0
+  Alcohol/Drugs,"21,228",2.3
+  Following,"286,111",30.7
+  Fatigue,"9,982",1.1
+  Vehicle Defect,"55,671",6.0
+  Pedestrian/Bike,"11,786",1.3

@@ -148,7 +148,7 @@ Contributing factor profiles exhibit meaningful spatial heterogeneity across bor
 ### 3.3 Structural Breaks in Crash Harm Series
 
 *[Figure — Phase 4 all-series plot: fig_phase4_all_series.png]*
-*[Table — Phase 4 break summary: phase4_breakpoints.csv]*
+*[Table — Phase 4 break summary: table2_breakpoints.csv]*
 
 PELT detection identified [N_total] structural breaks across nine weekly series.
 [N_policy] breaks coincided with known policy events (Vision Zero, FORMS rollout,
@@ -177,7 +177,7 @@ reviewing Table 1 and Table 2 outputs.)*
 
 ### 3.5 Regression Results
 
-*[Tables: regression_PEDESTRIAN_INVOLVED.csv, regression_CYCLIST_INVOLVED.csv, regression_FATAL.csv]*
+*[Tables: table4_regression_pedestrian.csv, table5_regression_cyclist.csv, table6_regression_fatal.csv]*
 
 Logistic models for pedestrian involvement, cyclist involvement, and fatal crashes
 all achieved McFadden pseudo-R² of approximately [X], indicating [interpretation].

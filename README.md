@@ -1,8 +1,8 @@
 # Structural Breaks in the Harm Profile of NYC Motor Vehicle Collisions (2016–2026)
 
 A data-driven research project analysing 2.25 million police-reported motor vehicle
-collisions in New York City using structural break detection, contributing factor
-analysis, and logistic regression.
+collisions in New York City using structural break detection and contributing factor
+analysis.
 
 **Dataset:** NYC Open Data — Motor Vehicle Collisions – Crashes ([h9gi-nx95](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95)), updated March 2026.
 
@@ -19,7 +19,6 @@ compare break timing across road-user subgroups and contributing-factor categori
 1. First multiple structural-break analysis of the full post-FORMS NYC crash record
 2. Taxonomy of policy-coincident vs. hidden breaks across pedestrian, cyclist, and motorist injury shares
 3. Borough-level spatial analysis of crash density and harm profiles
-4. Logistic regression of vulnerable-user involvement by policy era, contributing factor, and borough
 
 ---
 
@@ -31,7 +30,7 @@ compare break timing across road-user subgroups and contributing-factor categori
 ├── paper_outline.md            # Paper skeleton with placeholder text
 ├── requirements.txt            # Python dependencies
 │
-├── figures/                    # All publication figures (PNG 300dpi + PDF)
+├── figures/                    # All publication figures (PNG, 300 dpi)
 │   ├── fig1_annual_volume      # Monthly crash volume & injury burden
 │   ├── fig2_hourly_profiles    # Hourly profiles by road-user type
 │   ├── fig3_factor_composition # Quarterly contributing factor composition
@@ -41,12 +40,9 @@ compare break timing across road-user subgroups and contributing-factor categori
 │   └── fig_phase4_all_series   # All 9 weekly series with PELT breakpoints
 │
 ├── audit_report.txt            # Phase 1 data audit output
-├── phase4_breakpoints.csv      # Detected break dates and classifications
-├── table1_user_breaks.csv      # Break comparison — road-user series
-├── table2_factor_breaks.csv    # Break comparison — factor-share series
-├── regression_PEDESTRIAN_INVOLVED.csv
-├── regression_CYCLIST_INVOLVED.csv
-└── regression_FATAL.csv
+├── table2_breakpoints.csv      # Detected break dates and classifications (§3.3)
+├── table3_user_breaks.csv      # Break comparison — road-user series (§3.4)
+└── table4_factor_breaks.csv    # Break comparison — factor-share series (§3.4)
 ```
 
 > `crashes_clean.parquet` and `Motor_Vehicle_Collisions_-_Crashes.csv` are excluded
@@ -64,8 +60,7 @@ compare break timing across road-user subgroups and contributing-factor categori
 | **3** | Descriptive figures — Figures 1–6 |
 | **4** | PELT change-point detection on 9 weekly series (S1–S9) |
 | **5** | Comparative break analysis — synchrony vs. divergence across user types and factor shares |
-| **6** | Logistic regression — pedestrian involvement, cyclist involvement, fatal crash |
-| **7** | Paper skeleton generation (`paper_outline.md`) |
+| **6** | Paper skeleton generation (`paper_outline.md`) |
 
 ---
 
@@ -98,7 +93,6 @@ jupyter notebook research.ipynb
 - **Two hidden breaks** in the Distraction factor share (S7) at Oct 2018 and Jan 2021 — not attributable to any known policy event
 - **Pedestrian share (S3) shows no structural break** — unlike cyclist and motorist shares — suggesting pedestrian involvement is structurally stable relative to other harm types
 - **Borough spatial divergence**: Manhattan has the highest crash density (2,586/km²) but the lowest fatal share (0.14%); the Bronx has the highest fatal share (0.19%) at moderate density
-- Logistic models (AUC 0.76–0.81): Speed factor carries OR = 7.1 for fatality; Pedestrian/Bike error factor carries OR = 9.6 for fatality relative to Distraction
 
 ---
 
