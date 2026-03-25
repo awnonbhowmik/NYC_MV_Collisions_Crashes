@@ -1,8 +1,10 @@
 # Dataset
 Motor_Vehicle_Collisions_-_Crashes.csv
+crashes_clean.parquet
 
 # Additional files
 .~lock.Motor_Vehicle_Collisions_-_Crashes.csv#
+crashes_clean.parquet
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

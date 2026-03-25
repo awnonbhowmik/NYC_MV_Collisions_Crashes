@@ -1,0 +1,236 @@
+========================================================================
+1. SHAPE
+========================================================================
+   Rows   : 2,250,357
+   Columns: 29
+
+========================================================================
+2. COLUMNS AND DTYPES
+========================================================================
+   CRASH DATE                                    str
+   CRASH TIME                                    str
+   BOROUGH                                       str
+   ZIP CODE                                      str
+   LATITUDE                                      float64
+   LONGITUDE                                     float64
+   LOCATION                                      str
+   ON STREET NAME                                str
+   CROSS STREET NAME                             str
+   OFF STREET NAME                               str
+   NUMBER OF PERSONS INJURED                     float64
+   NUMBER OF PERSONS KILLED                      float64
+   NUMBER OF PEDESTRIANS INJURED                 int64
+   NUMBER OF PEDESTRIANS KILLED                  int64
+   NUMBER OF CYCLIST INJURED                     int64
+   NUMBER OF CYCLIST KILLED                      int64
+   NUMBER OF MOTORIST INJURED                    int64
+   NUMBER OF MOTORIST KILLED                     int64
+   CONTRIBUTING FACTOR VEHICLE 1                 str
+   CONTRIBUTING FACTOR VEHICLE 2                 str
+   CONTRIBUTING FACTOR VEHICLE 3                 str
+   CONTRIBUTING FACTOR VEHICLE 4                 str
+   CONTRIBUTING FACTOR VEHICLE 5                 str
+   COLLISION_ID                                  int64
+   VEHICLE TYPE CODE 1                           str
+   VEHICLE TYPE CODE 2                           str
+   VEHICLE TYPE CODE 3                           str
+   VEHICLE TYPE CODE 4                           str
+   VEHICLE TYPE CODE 5                           str
+
+========================================================================
+3. DATE RANGE (CRASH DATE)
+========================================================================
+   Min : 2012-07-01
+   Max : 2026-03-21
+   Null: 0
+
+========================================================================
+4. MISSING VALUES (sorted by % missing, descending)
+========================================================================
+   VEHICLE TYPE CODE 5                           2,240,480.0  ( 99.56%)
+   CONTRIBUTING FACTOR VEHICLE 5                 2,240,158.0  ( 99.55%)
+   VEHICLE TYPE CODE 4                           2,214,474.0  ( 98.41%)
+   CONTRIBUTING FACTOR VEHICLE 4                 2,213,117.0  ( 98.35%)
+   VEHICLE TYPE CODE 3                           2,093,926.0  ( 93.05%)
+   CONTRIBUTING FACTOR VEHICLE 3                 2,087,511.0  ( 92.76%)
+   OFF STREET NAME                               1,849,632.0  ( 82.19%)
+   CROSS STREET NAME                             861,396.0  ( 38.28%)
+   ZIP CODE                                      687,094.0  ( 30.53%)
+   BOROUGH                                       686,811.0  ( 30.52%)
+   ON STREET NAME                                493,099.0  ( 21.91%)
+   VEHICLE TYPE CODE 2                           456,846.0  ( 20.30%)
+   CONTRIBUTING FACTOR VEHICLE 2                 364,755.0  ( 16.21%)
+   LOCATION                                      240,657.0  ( 10.69%)
+   LATITUDE                                      240,657.0  ( 10.69%)
+   LONGITUDE                                     240,657.0  ( 10.69%)
+   VEHICLE TYPE CODE 1                            16,786.0  (  0.75%)
+   CONTRIBUTING FACTOR VEHICLE 1                   8,130.0  (  0.36%)
+   CRASH DATE                                          0.0  (  0.00%)
+   NUMBER OF PERSONS INJURED                          18.0  (  0.00%)
+   CRASH TIME                                          0.0  (  0.00%)
+   NUMBER OF PEDESTRIANS INJURED                       0.0  (  0.00%)
+   NUMBER OF PERSONS KILLED                           31.0  (  0.00%)
+   NUMBER OF MOTORIST KILLED                           0.0  (  0.00%)
+   NUMBER OF MOTORIST INJURED                          0.0  (  0.00%)
+   NUMBER OF PEDESTRIANS KILLED                        0.0  (  0.00%)
+   NUMBER OF CYCLIST INJURED                           0.0  (  0.00%)
+   NUMBER OF CYCLIST KILLED                            0.0  (  0.00%)
+   COLLISION_ID                                        0.0  (  0.00%)
+
+========================================================================
+5. CONTRIBUTING FACTOR VEHICLE 1 — missingness by reporting era
+========================================================================
+   Before Mar 1 2016 : 0.22% missing  (n=762,126)
+   On/After Mar 1 2016: 0.43% missing  (n=1,488,231)
+
+========================================================================
+6. CONTRIBUTING FACTOR VEHICLE 1 — value_counts (including NaN)
+========================================================================
+   Unspecified                                               751,550  ( 33.40%)
+   Driver Inattention/Distraction                            457,618  ( 20.34%)
+   Failure to Yield Right-of-Way                             134,910  (  6.00%)
+   Following Too Closely                                     120,719  (  5.36%)
+   Backing Unsafely                                           82,016  (  3.64%)
+   Other Vehicular                                            70,623  (  3.14%)
+   Passing or Lane Usage Improper                             64,791  (  2.88%)
+   Passing Too Closely                                        57,418  (  2.55%)
+   Turning Improperly                                         55,280  (  2.46%)
+   Fatigued/Drowsy                                            47,584  (  2.11%)
+   Unsafe Lane Changing                                       44,361  (  1.97%)
+   Traffic Control Disregarded                                41,444  (  1.84%)
+   Driver Inexperience                                        36,460  (  1.62%)
+   Unsafe Speed                                               35,062  (  1.56%)
+   Alcohol Involvement                                        26,092  (  1.16%)
+   Reaction to Uninvolved Vehicle                             21,978  (  0.98%)
+   Pavement Slippery                                          21,227  (  0.94%)
+   Lost Consciousness                                         20,870  (  0.93%)
+   View Obstructed/Limited                                    15,488  (  0.69%)
+   Prescription Medication                                    15,435  (  0.69%)
+   Oversized Vehicle                                          13,249  (  0.59%)
+   Outside Car Distraction                                    13,192  (  0.59%)
+   Pedestrian/Bicyclist/Other Pedestrian Error/Confusion      11,892  (  0.53%)
+   Aggressive Driving/Road Rage                               11,346  (  0.50%)
+   Physical Disability                                         9,433  (  0.42%)
+   Passenger Distraction                                       8,615  (  0.38%)
+   nan                                                         8,130  (  0.36%)
+   Brakes Defective                                            7,566  (  0.34%)
+   Fell Asleep                                                 6,428  (  0.29%)
+   Obstruction/Debris                                          4,665  (  0.21%)
+   Glare                                                       4,422  (  0.20%)
+   Failure to Keep Right                                       3,473  (  0.15%)
+   Steering Failure                                            3,275  (  0.15%)
+   Tire Failure/Inadequate                                     2,797  (  0.12%)
+   Pavement Defective                                          2,649  (  0.12%)
+   Other Electronic Device                                     2,348  (  0.10%)
+   Illness                                                     2,158  (  0.10%)
+   Illnes                                                      1,982  (  0.09%)
+   Animals Action                                              1,703  (  0.08%)
+   Driverless/Runaway Vehicle                                  1,452  (  0.06%)
+   Reaction to Other Uninvolved Vehicle                        1,337  (  0.06%)
+   Accelerator Defective                                       1,221  (  0.05%)
+   Lane Marking Improper/Inadequate                            1,079  (  0.05%)
+   Drugs (illegal)                                               982  (  0.04%)
+   Traffic Control Device Improper/Non-Working                   954  (  0.04%)
+   Cell Phone (hand-Held)                                        605  (  0.03%)
+   Drugs (Illegal)                                               419  (  0.02%)
+   Cell Phone (hands-free)                                       286  (  0.01%)
+   Tow Hitch Defective                                           245  (  0.01%)
+   Tinted Windows                                                213  (  0.01%)
+   Other Lighting Defects                                        211  (  0.01%)
+   Using On Board Navigation Device                              169  (  0.01%)
+   Vehicle Vandalism                                             159  (  0.01%)
+   Headlights Defective                                          157  (  0.01%)
+   Eating or Drinking                                            151  (  0.01%)
+   Shoulders Defective/Improper                                  102  (  0.00%)
+   80                                                            101  (  0.00%)
+   Windshield Inadequate                                          90  (  0.00%)
+   Cell Phone (hand-held)                                         79  (  0.00%)
+   Texting                                                        58  (  0.00%)
+   Listening/Using Headphones                                     28  (  0.00%)
+   1                                                              10  (  0.00%)
+
+========================================================================
+7. VEHICLE TYPE CODE 1 — value_counts (top 50, including NaN)
+========================================================================
+   Sedan                                                     655,376  ( 29.12%)
+   Station Wagon/Sport Utility Vehicle                       512,863  ( 22.79%)
+   PASSENGER VEHICLE                                         416,206  ( 18.50%)
+   SPORT UTILITY / STATION WAGON                             180,291  (  8.01%)
+   Taxi                                                       56,811  (  2.52%)
+   4 dr sedan                                                 40,188  (  1.79%)
+   Pick-up Truck                                              39,022  (  1.73%)
+   TAXI                                                       31,911  (  1.42%)
+   Box Truck                                                  27,033  (  1.20%)
+   VAN                                                        25,266  (  1.12%)
+   Bus                                                        25,005  (  1.11%)
+   OTHER                                                      22,968  (  1.02%)
+   UNKNOWN                                                    19,941  (  0.89%)
+   Bike                                                       18,470  (  0.82%)
+   nan                                                        16,786  (  0.75%)
+   LARGE COM VEH(6 OR MORE TIRES)                             14,397  (  0.64%)
+   BUS                                                        13,993  (  0.62%)
+   SMALL COM VEH(4 TIRES)                                     13,216  (  0.59%)
+   Tractor Truck Diesel                                       11,523  (  0.51%)
+   PICK-UP TRUCK                                              11,505  (  0.51%)
+   LIVERY VEHICLE                                             10,481  (  0.47%)
+   Motorcycle                                                 10,041  (  0.45%)
+   Van                                                        10,018  (  0.45%)
+   Ambulance                                                   5,316  (  0.24%)
+   Dump                                                        4,391  (  0.20%)
+   E-Bike                                                      4,335  (  0.19%)
+   Convertible                                                 4,291  (  0.19%)
+   MOTORCYCLE                                                  4,195  (  0.19%)
+   Moped                                                       3,324  (  0.15%)
+   PK                                                          2,964  (  0.13%)
+   AMBULANCE                                                   2,784  (  0.12%)
+   E-Scooter                                                   2,738  (  0.12%)
+   Garbage or Refuse                                           2,721  (  0.12%)
+   Flat Bed                                                    2,711  (  0.12%)
+   2 dr sedan                                                  2,653  (  0.12%)
+   Carry All                                                   2,143  (  0.10%)
+   Tractor Truck Gasoline                                      1,726  (  0.08%)
+   Tow Truck / Wrecker                                         1,554  (  0.07%)
+   Chassis Cab                                                 1,026  (  0.05%)
+   Tanker                                                        930  (  0.04%)
+   FIRE TRUCK                                                    904  (  0.04%)
+   Motorscooter                                                  849  (  0.04%)
+   Motorbike                                                     582  (  0.03%)
+   BICYCLE                                                       559  (  0.02%)
+   Concrete Mixer                                                530  (  0.02%)
+   Refrigerated Van                                              493  (  0.02%)
+   van                                                           464  (  0.02%)
+   Flat Rack                                                     459  (  0.02%)
+   Standing S                                                    439  (  0.02%)
+   LIMO                                                          386  (  0.02%)
+
+========================================================================
+8. BOROUGH — value_counts (including NaN)
+========================================================================
+   nan                         686,811  ( 30.52%)
+   BROOKLYN                    501,938  ( 22.30%)
+   QUEENS                      418,801  ( 18.61%)
+   MANHATTAN                   345,595  ( 15.36%)
+   BRONX                       231,746  ( 10.30%)
+   STATEN ISLAND                65,466  (  2.91%)
+
+========================================================================
+9. INJURY / FATALITY COLUMNS — describe()
+========================================================================
+                                   count      mean       std  min  25%  50%  75%   max
+NUMBER OF PERSONS INJURED      2250339.0  0.330999  0.716650  0.0  0.0  0.0  0.0  43.0
+NUMBER OF PERSONS KILLED       2250326.0  0.001593  0.042136  0.0  0.0  0.0  0.0   8.0
+NUMBER OF PEDESTRIANS INJURED  2250357.0  0.060426  0.251606  0.0  0.0  0.0  0.0  27.0
+NUMBER OF PEDESTRIANS KILLED   2250357.0  0.000791  0.028746  0.0  0.0  0.0  0.0   6.0
+NUMBER OF CYCLIST INJURED      2250357.0  0.029325  0.171003  0.0  0.0  0.0  0.0   4.0
+NUMBER OF CYCLIST KILLED       2250357.0  0.000128  0.011332  0.0  0.0  0.0  0.0   2.0
+NUMBER OF MOTORIST INJURED     2250357.0  0.236524  0.677799  0.0  0.0  0.0  0.0  43.0
+NUMBER OF MOTORIST KILLED      2250357.0  0.000643  0.027727  0.0  0.0  0.0  0.0   5.0
+
+========================================================================
+10. ROWS WITH BOROUGH + CF_V1 + LATITUDE + LONGITUDE ALL NON-NULL
+========================================================================
+   Complete rows : 1,519,478  (67.52% of total)
+
+========================================================================
+END OF AUDIT REPORT
+========================================================================

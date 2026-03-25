@@ -1,89 +1,105 @@
-# Motor Vehicle Collisions - NYC Dataset
+# Structural Breaks in the Harm Profile of NYC Motor Vehicle Collisions (2016–2026)
 
-This repository contains data on motor vehicle collisions in New York City (sourced from [Data.gov](https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes).), focused on information such as crash dates, times, and details on injuries and fatalities among pedestrians, cyclists, and motorists. This project leverages Exploratory Data Analysis (EDA) to reveal patterns in collisions and applies predictive analytics to forecast high-risk periods and factors contributing to injuries and fatalities.
+A data-driven research project analysing 2.25 million police-reported motor vehicle
+collisions in New York City using structural break detection, contributing factor
+analysis, and logistic regression.
 
-## Project Overview
-This project involves using a Negative Binomial Model and LSTM neural network to predict counts of injuries and fatalities. It includes data preprocessing, model building, evaluation, and visualization.
+**Dataset:** NYC Open Data — Motor Vehicle Collisions – Crashes ([h9gi-nx95](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95)), updated March 2026.
 
-## Dataset Overview
+---
 
-The dataset includes various features, such as:
-- **Date and Time**: Specific date and time of the crash.
-- **Injuries and Fatalities**: Total count of injured or killed individuals, including breakdowns for pedestrians, cyclists, and motorists.
-- **Categorical Time Intervals**: Defined intervals such as Morning Commute, School Hours, and Evening for detailed analysis.
-  
-## Project Objectives
+## Research Overview
 
-1. **Exploratory Data Analysis (EDA)**:
-   - Clean and preprocess data for consistency.
-   - Visualize data to understand trends, patterns, and correlations.
-   - Identify high-risk time intervals, such as Morning Commute or School Hours, for crashes.
-   - Analyze the impact of time and location on injuries and fatalities.
+This project applies PELT multiple change-point detection to nine weekly crash-harm
+time series (March 2016–March 2026) to identify structural breaks in NYC crash
+patterns, classify them as policy-coincident or data-detected "hidden" breaks, and
+compare break timing across road-user subgroups and contributing-factor categories.
 
-2. **Predictive Analytics**:
-   - Build machine learning models to predict the likelihood of injuries or fatalities based on time intervals and contributing factors.
-   - Evaluate models using performance metrics such as accuracy, precision, and recall.
-   - Use model insights to suggest preventive measures to enhance road safety in NYC.
+### Core contributions
+1. First multiple structural-break analysis of the full post-FORMS NYC crash record
+2. Taxonomy of policy-coincident vs. hidden breaks across pedestrian, cyclist, and motorist injury shares
+3. Borough-level spatial analysis of crash density and harm profiles
+4. Logistic regression of vulnerable-user involvement by policy era, contributing factor, and borough
 
-## Notebook Summary
-- **Data Processing:** Loaded data features such as year and population, scaled the features, and set target variables for prediction.
-- **Modeling:** Built separate neural network models for predicting injuries and fatalities, using layers and activation functions suitable for regression.
-- **Evaluation:** Evaluated model performance with loss metrics and RMSE.
-- **Visualization:** Included loss curve plots for training and validation, along with prediction visualizations.
+---
 
-## Tools & Technologies
+## Repository Structure
 
-- **Languages**: Python
-- **Libraries**:
-   - Data Analysis: `pandas`, `numpy`
-   - Data Visualization: `matplotlib`, `seaborn`, `plotly`
-   - Machine Learning: `scikit-learn`
-- **Jupyter Notebooks**: For data exploration, EDA, and predictive modeling.
+```
+.
+├── research.ipynb              # Main research notebook (all phases)
+├── paper_outline.md            # Paper skeleton with placeholder text
+├── requirements.txt            # Python dependencies
+│
+├── figures/                    # All publication figures (PNG 300dpi + PDF)
+│   ├── fig1_annual_volume      # Monthly crash volume & injury burden
+│   ├── fig2_hourly_profiles    # Hourly profiles by road-user type
+│   ├── fig3_factor_composition # Quarterly contributing factor composition
+│   ├── fig4_factor_by_user_type# Factor profiles by harm type
+│   ├── fig5_borough_heatmap    # Borough × factor heatmap
+│   ├── fig6_borough_choropleth # Borough choropleth maps (4-panel)
+│   └── fig_phase4_all_series   # All 9 weekly series with PELT breakpoints
+│
+├── audit_report.txt            # Phase 1 data audit output
+├── phase4_breakpoints.csv      # Detected break dates and classifications
+├── table1_user_breaks.csv      # Break comparison — road-user series
+├── table2_factor_breaks.csv    # Break comparison — factor-share series
+├── regression_PEDESTRIAN_INVOLVED.csv
+├── regression_CYCLIST_INVOLVED.csv
+└── regression_FATAL.csv
+```
 
-## Installation & Setup
+> `crashes_clean.parquet` and `Motor_Vehicle_Collisions_-_Crashes.csv` are excluded
+> from version control (large files — see `.gitignore`).
 
-To run the analysis locally, follow these steps:
+---
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/NYC_MV_Collisions_Crashes.git
-    ```
-2. Create and activate a virtual environment:
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate   # For Windows: venv\Scripts\activate
-    ```
-3. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-4. Launch Jupyter Notebook:
-    ```bash
-    jupyter notebook
-    ```
+## Notebook Structure
 
-## EDA & Predictive Analytics Workflow
+| Phase | Content |
+|-------|---------|
+| **0** | Environment setup — package version check |
+| **1** | Data audit — shape, missingness, value distributions, pre/post-2016 reporting quality |
+| **2** | Cleaning & feature engineering — datetime parsing, policy eras, injury flags, borough spatial imputation, broad contributing factor taxonomy |
+| **3** | Descriptive figures — Figures 1–6 |
+| **4** | PELT change-point detection on 9 weekly series (S1–S9) |
+| **5** | Comparative break analysis — synchrony vs. divergence across user types and factor shares |
+| **6** | Logistic regression — pedestrian involvement, cyclist involvement, fatal crash |
+| **7** | Paper skeleton generation (`paper_outline.md`) |
 
-1. **Data Preprocessing**:
-   - Handle missing or inconsistent entries.
-   - Convert date and time fields to appropriate formats.
-   - Apply categorical encoding for time intervals (e.g., Morning Commute, School Hours).
+---
 
-2. **Exploratory Data Analysis (EDA)**:
-   - **Time-based Analysis**: Examine trends across daily activity intervals, days of the week, and seasonal trends.
-   - **Injury Analysis**: Explore injury and fatality rates among pedestrians, cyclists, and motorists.
-   - **Population-Based Insights**: Adjust trends based on NYC population over time for context.
+## Setup
 
-3. **Predictive Modeling**:
-   - Train models (e.g., Decision Trees, Random Forest, Logistic Regression) to predict the severity of collisions.
-   - Fine-tune parameters and assess model performance.
-   
-## Visualizations
+```bash
+# Clone
+git clone https://github.com/yourusername/NYC_MV_Collisions_Crashes.git
+cd NYC_MV_Collisions_Crashes
 
-- **Time Interval Charts**: Compare injuries and fatalities across time intervals, such as School Hours and Commute periods.
-- **Injury Breakdown Charts**: Visualize injuries across different groups (e.g., pedestrians, cyclists, motorists).
-- **Time-Series Analysis**: Track trends in crash outcomes over the years.
+# Create virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
 
+# Install dependencies
+pip install -r requirements.txt
 
+# Launch notebook
+jupyter notebook research.ipynb
+```
+
+> Download the dataset from [NYC Open Data (h9gi-nx95)](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95)
+> and place it in the project root as `Motor_Vehicle_Collisions_-_Crashes.csv` before running.
+
+---
+
+## Key Findings (preliminary)
+
+- PELT detected structural breaks including **COVID-coincident breaks** in crash count (S1), cyclist share (S4), fatal share (S6), and speed factor share (S9)
+- **Two hidden breaks** in the Distraction factor share (S7) at Oct 2018 and Jan 2021 — not attributable to any known policy event
+- **Pedestrian share (S3) shows no structural break** — unlike cyclist and motorist shares — suggesting pedestrian involvement is structurally stable relative to other harm types
+- **Borough spatial divergence**: Manhattan has the highest crash density (2,586/km²) but the lowest fatal share (0.14%); the Bronx has the highest fatal share (0.19%) at moderate density
+- Logistic models (AUC 0.76–0.81): Speed factor carries OR = 7.1 for fatality; Pedestrian/Bike error factor carries OR = 9.6 for fatality relative to Distraction
+
+---
 
 All Rights Reserved ©
