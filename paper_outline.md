@@ -1,6 +1,6 @@
 # Structural Breaks in the Harm Profile of NYC Motor Vehicle Collisions, 2016–2026
 
-> **Working title** — replace before submission.  
+> **Working title** — replace before submission.
 > All figure/table references point to outputs in `figures/` and `*.csv` files.
 
 ---
@@ -14,13 +14,11 @@ in New York City between March 2016 and March 2026, using a complete administrat
 record of 2.25 million crashes drawn from the NYC Motor Vehicle Collisions dataset
 (NYC Open Data, h9gi-nx95). Applying PELT multiple change-point detection to nine
 weekly time series—covering crash volume, injury burden, road-user harm shares, and
-contributing-factor shares—we identify [N] structural breaks, of which [M] coincide
-with known policy events (Vision Zero, FORMS rollout, COVID-19 onset, post-COVID
-re-opening) and [K] are data-detected "hidden" breaks not attributable to known
-interventions. Pedestrian, cyclist, and motorist injury shares exhibit both
-synchronised and divergent break patterns, constituting the core empirical finding.
-Logistic regression confirms significant associations between policy era, contributing
-factor type, and vulnerable-user involvement. Implications for crash-surveillance
+contributing-factor shares—we identify 9 structural breaks, of which 5 coincide
+with known policy events (COVID-19 onset, post-COVID re-opening) and 4 are
+data-detected "hidden" breaks not attributable to known interventions. Pedestrian,
+cyclist, and motorist injury shares exhibit both synchronised and divergent break
+patterns, constituting the core empirical finding. Implications for crash-surveillance
 methodology and urban safety policy are discussed.
 
 ---
@@ -98,32 +96,30 @@ segment length was set to 8 weeks. Detected break dates were classified as
 factor-share series (S7–S9) were compared; breaks within 60 days of each other
 across series were designated "synchronised."
 
-**Regression models.** Three logistic regression models (outcomes: pedestrian
-involvement, cyclist involvement, fatal crash) were fit on post-2016 records with
-non-Unspecified contributing factor and non-null borough. Predictors included
-hour of day, weekend indicator, season, policy era, broad contributing factor
-category, and borough. Odds ratios with 95% confidence intervals, McFadden
-pseudo-R², and AUC-ROC are reported.
-
 ---
 
 ## 3. Results
 
 ### 3.1 Descriptive Trends
 
+*[Table 1 — Descriptive statistics: table1_descriptive_stats.csv]*
 *[Figure 1 — Annual crash volume and injury burden]*
 
-Annual crash volume peaked at [YEAR] ([N] crashes) before declining sharply at the
-onset of COVID-19 (March 2020). The COVID period saw a [X]% reduction in crash
-volume but — critically — a disproportionate increase in per-crash injury burden,
-consistent with the well-documented speed-increase phenomenon during low-traffic
-periods [CITE]. Volume recovered to [Y]% of pre-COVID levels by [YEAR].
+Annual crash volume peaked in 2018 (231,564 crashes) before declining steadily and
+then sharply at the onset of COVID-19 in March 2020. The COVID period (March 2020–
+June 2021) saw a 37.3% reduction in weekly crash volume relative to the equivalent
+pre-pandemic period — but, critically, a 49.3% increase in mean per-crash injury
+burden (0.298 → 0.445 persons injured per crash), consistent with the well-documented
+speed-increase phenomenon during low-traffic periods [CITE]. Annual volume continued
+declining post-pandemic, reaching 45% of the 2018 peak by 2022, suggesting a
+structural downward shift rather than full recovery.
 
 *[Figure 2 — Hourly injury profiles by road-user type]*
 
-Pedestrian involvement peaks during [HOUR] on weekdays and shifts to [HOUR] on
-weekends, reflecting the concentration of pedestrian activity at commute times.
-Cyclist injury profiles exhibit a distinct bimodal weekday pattern. Motorist-only
+Pedestrian involvement peaks at 17:00 on weekdays and shifts to 18:00 on weekends,
+reflecting the concentration of pedestrian activity at commute times. Cyclist injury
+profiles exhibit a distinct bimodal weekday pattern, with a morning peak at 08:00 and
+an afternoon peak at 17:00 consistent with commuter cycling patterns. Motorist-only
 injuries track closely with overall traffic volume.
 
 ### 3.2 Contributing Factor Composition Over Time
@@ -131,8 +127,10 @@ injuries track closely with overall traffic volume.
 *[Figure 3 — Quarterly factor composition, post-Mar 2016]*
 
 Driver Inattention/Distraction has consistently dominated the informative-factor
-distribution, comprising approximately [X]% of all informative crashes throughout
-the study period. *(Discuss any notable changes observed in Figure 3.)*
+distribution, comprising approximately 39.9% of all informative crashes throughout
+the study period. Following Too Closely is the second largest category (30.7%),
+together accounting for over 70% of informative-factor crashes. *(Discuss any
+notable changes observed in Figure 3.)*
 
 *[Figure 4 — Factor profiles by road-user harm type]*
 
@@ -143,52 +141,84 @@ Closely is predominantly a motorist-only pattern. *(Expand from Figure 4 values.
 *[Figure 5 — Borough heatmap]*
 
 Contributing factor profiles exhibit meaningful spatial heterogeneity across boroughs.
+Manhattan has the highest crash density (2,586/km²) but the lowest fatal share
+(0.14%); the Bronx has the highest fatal share (0.19%) at moderate density.
 *(Describe the most salient borough-level differences observed in Figure 5.)*
 
 ### 3.3 Structural Breaks in Crash Harm Series
 
 *[Figure — Phase 4 all-series plot: fig_phase4_all_series.png]*
-*[Table — Phase 4 break summary: table2_breakpoints.csv]*
+*[Table 2 — Break summary: table2_breakpoints.csv]*
 
-PELT detection identified [N_total] structural breaks across nine weekly series.
-[N_policy] breaks coincided with known policy events (Vision Zero, FORMS rollout,
-COVID onset, COVID end), while [N_hidden] were data-detected "hidden" breaks.
+PELT detection identified **9 structural breaks** across nine weekly series.
+**5 breaks** coincided with known policy events (all COVID-related), while **4**
+were data-detected "hidden" breaks not attributable to any known intervention.
+Notably, two series — S3 (pedestrian injury share) and S8 (Yield Failure factor
+share) — yielded no detectable structural break.
 
-*(Insert specific break dates and narrative description for each series here.)*
+Series-level findings:
+
+- **S1 — Weekly crash count:** Single break at **2020-03-09** (COVID onset). Weekly
+  volumes fell sharply as pandemic restrictions took hold, consistent with reduced
+  vehicle miles travelled.
+- **S2 — Weekly persons injured:** Single break at **2019-12-16** (hidden). This
+  pre-pandemic break precedes any known policy change and may reflect a gradual
+  shift in crash severity composition in late 2019.
+- **S3 — Pedestrian injury share:** No structural break detected across the full
+  post-FORMS period. Pedestrian involvement as a share of all injured persons
+  appears structurally stable relative to the other road-user series.
+- **S4 — Cyclist injury share:** Two breaks: **2020-04-20** (COVID onset, synchronised
+  with S6) and **2020-11-09** (hidden). The second break suggests a cyclist-specific
+  compositional shift during the autumn 2020 pandemic period, not shared by other
+  road-user series.
+- **S5 — Motorist injury share:** Single break at **2021-08-23** (COVID end). The
+  delayed timing relative to the June 2021 policy reopening boundary suggests
+  motorist-injury composition adjusted gradually.
+- **S6 — Fatal crash share:** Single break at **2020-03-23** (COVID onset, synchronised
+  with S1 and S4). Fatal share rose sharply during the low-volume, high-speed
+  pandemic period.
+- **S7 — Distraction factor share:** Two hidden breaks at **2018-10-08** and
+  **2021-01-11**, neither attributable to known policy events. These may reflect
+  gradual changes in officer reporting behaviour or the real-world adoption of
+  hands-free device mandates.
+- **S8 — Yield Failure factor share:** No structural break detected.
+- **S9 — Speed factor share:** Single break at **2020-03-16** (COVID onset),
+  consistent with anecdotal and empirical evidence of increased speeding during
+  low-traffic pandemic conditions.
 
 ### 3.4 Synchrony and Divergence Across Road-User Types
 
-*[Table 1 — User-type break comparison]*
-*[Table 2 — Factor-share break comparison]*
+*[Table 3 — User-type break comparison: table3_user_breaks.csv]*
+*[Table 4 — Factor-share break comparison: table4_factor_breaks.csv]*
 
-**[FILL IN based on Table 1 output]**
+The analysis reveals a pattern of partial synchrony at COVID onset and divergence
+thereafter. Specifically:
 
-The analysis reveals that [synchronised / divergent] structural change characterises
-the pedestrian and cyclist harm series relative to the motorist-only series.
-Specifically:
-- The COVID onset break (approximately March–April 2020) appears synchronised
-  across all three user-type series, suggesting a uniform shock to the road network.
-- Post-COVID breaks, however, are [synchronised / divergent], indicating
-  [interpretation].
-- The Distraction factor share (S7) exhibits [describe].
+- **COVID onset synchrony (March–April 2020):** Breaks in S1 (crash count,
+  2020-03-09), S4 (cyclist share, 2020-04-20), S6 (fatal share, 2020-03-23),
+  and S9 (speed factor share, 2020-03-16) are all within 60 days of each other,
+  indicating a uniform exogenous shock to the road network. This synchrony spans
+  both road-user and contributing-factor dimensions.
 
-*(This narrative is the core empirical finding of the paper — complete after
-reviewing Table 1 and Table 2 outputs.)*
+- **Pedestrian share (S3) shows no break** — unlike cyclist (S4) and motorist (S5)
+  shares — suggesting pedestrian involvement as a proportion of harm is structurally
+  stable and does not respond to the same shocks that altered cyclist and motorist
+  composition.
 
-### 3.5 Regression Results
+- **Post-COVID divergence:** The cyclist series (S4) exhibits a hidden break in
+  November 2020, while the motorist series (S5) breaks in August 2021. These
+  divergent timings indicate that cyclist and motorist harm compositions recovered
+  from, or were transformed by, the pandemic shock along different trajectories —
+  contrary to the null hypothesis of uniform post-pandemic adjustment.
 
-*[Tables: table4_regression_pedestrian.csv, table5_regression_cyclist.csv, table6_regression_fatal.csv]*
+- **Distraction factor share (S7)** exhibits two hidden breaks (October 2018 and
+  January 2021), with no synchrony to either road-user breaks or known policy
+  events. The January 2021 break occurs in the same quarter as S5's post-COVID
+  adjustment, but the gap (>60 days) precludes formal synchrony designation.
 
-Logistic models for pedestrian involvement, cyclist involvement, and fatal crashes
-all achieved McFadden pseudo-R² of approximately [X], indicating [interpretation].
-
-Key findings:
-- **Policy era:** Relative to VZ-FORMS, the COVID era is associated with
-  [higher/lower] odds of [outcome] (OR = [X], 95% CI [A–B]).
-- **Contributing factor:** Pedestrian/Bike errors carry substantially higher odds of
-  pedestrian involvement (OR = [X]) relative to the Distraction reference.
-- **Borough:** [Notable borough-level OR findings].
-- **Hour and weekend:** [Describe temporal patterns].
+- **Yield Failure (S8)** and **Speed (S9)** share no common break timing,
+  suggesting factor-share structural change is not driven by a single common cause
+  across contributing-factor categories.
 
 ---
 
@@ -229,15 +259,19 @@ Key findings:
 
 ## 6. Conclusion
 
-*(To be completed after finalising break-date results.)*
-
 This study provides the first systematic multiple structural-break analysis of nine
 weekly crash-harm series in New York City over the post-FORMS period (2016–2026).
-We find evidence of [N] structural breaks, including [N_hidden] not attributable
-to known policy events, and demonstrate [synchrony / divergence] in the timing of
-structural change across pedestrian, cyclist, and motorist harm series. These
-findings carry direct implications for crash-surveillance practice and for the
-evaluation of urban road-safety interventions.
+We find evidence of 9 structural breaks across nine weekly series, of which 4 are
+"hidden" breaks not attributable to known policy events. The COVID-19 onset of March
+2020 emerges as the dominant structural event, producing synchronised breaks across
+crash count, cyclist share, fatal share, and speed-factor share within a six-week
+window. Importantly, pedestrian injury share (S3) exhibits no structural break across
+the full decade, while cyclist and motorist shares diverge in their post-pandemic
+adjustment trajectories — a finding with direct implications for vulnerable road-user
+policy. The two hidden breaks in the Distraction factor share (October 2018, January
+2021) raise questions about the stability of officer reporting behaviour independent
+of real-world crash-cause changes, with implications for crash-surveillance practice
+and the interpretation of FORMS-based administrative data.
 
 ---
 
